@@ -268,61 +268,22 @@ AI1110 Assignment 2 in \LaTeX
 \end{enumerate}
 
 \textbf{Solution:}
-\\ H : Heads, T : Tails
 \begin{enumerate}[label=(\roman*)]
-\item number of heads in two tosses of a coin.
-\\\\Let X be the random variable representing the number of heads in two tosses of a fair coin. 
-\\Possible outcomes = \{HH, HT, TH, TT\}. All outcomes are equally likely. Probability of each outcome is $\frac{1}{4}$.
-\\X can take values \{0, 1, 2\}.
-\\\\Probability distribution of X:\\\\
-\begin{tabular}{|c|c|c|c|}
-\hline
-X&0&1&2\\
-\hline
-P(X=x)&$\frac{1}{4}$&$\frac{2}{4}$&$\frac{1}{4}$\\
-\hline
-\end{tabular}
- = 
-\begin{tabular}{|c|c|c|c|}
-\hline
-X&0&1&2\\
-\hline
-P(X=x)&$\frac{1}{4}$&$\frac{1}{2}$&$\frac{1}{4}$\\
-\hline
-\end{tabular}
+\item Let X be the random variable representing the number of heads in two tosses of a fair coin. X can take values \{0, 1, 2\}.
+\\\\ P(X=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$,  $\therefore$ P(X=r) = $n \choose r$ $ (\frac{1}{2}) ^n $.
+\begin{align}
+P(X=0) &= {2 \choose 0} \frac{1}{2^2} = \frac{1}{4} \\ P(X=1) &= {2 \choose 1}  \frac{1}{2^2} = \frac{2}{4} = \frac{1}{2}\\ P(X=2) &= {2 \choose 2}  \frac{1}{2^2} = \frac{1}{4}
+\end{align}
+\item Let Y be the random variable representing the number of tails in simultaneous tosses of 3 coins. Y can take values \{0, 1, 2, 3\}.
+\\\\ P(Y=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$,  $\therefore$ P(Y=r) = $n \choose r$ $ (\frac{1}{2}) ^n $.
+\begin{align}
+P(Y=0) &= {3 \choose 0} \frac{1}{2^3} = \frac{1}{8} \\ P(Y=1) &= {3 \choose 1}  \frac{1}{2^3} = \frac{3}{8}\\ P(Y=2) &= {3 \choose 2}  \frac{1}{2^3} = \frac{3}{8} \\ P(Y=3) &= {3 \choose 3}  \frac{1}{2^3}  = \frac{1}{8}
+\end{align}
 \\
-\item number of tails in the simultaneous tosses of three coins.
-\\\\ Let Y be the random variable representing the number of tails in simultaneous tosses of 3 coins.
-\\ There are $2^3$ = 8 possible outcomes, and they are equally likely.
-\\ $\therefore$ Probability of each outcome is $\frac{1}{8}$.
-\\ Y can take values \{0, 1, 2, 3\}.
-\\\\Probability distribution of Y:\\\\
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Y&0&1&2&3\\
-\hline
-P(Y=y)&$\frac{1}{8}$&$\frac{3}{8}$&$\frac{3}{8}$&$\frac{1}{8}$\\
-\hline
-\end{tabular}
-\\
-\item number of heads in four tosses of a coin.
-\\\\ Let Z be the random variable representing the number of heads in four tosses of a coin.
-\\ There are $2^4$ = 16 possible outcomes each with probability $\frac{1}{16}$. Z can take values \{0, 1, 2, 3, 4\}.
-\\\\Probability distribution of Z:\\\\
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Z&0&1&2&3&4\\
-\hline
-P(Z=z)&$\frac{1}{16}$&$\frac{4}{16}$&$\frac{6}{16}$&$\frac{4}{16}$&$\frac{1}{16}$\\
-\hline
-\end{tabular}
- = 
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-Z&0&1&2&3&4\\
-\hline
-P(Z=z)&$\frac{1}{16}$&$\frac{1}{4}$&$\frac{3}{8}$&$\frac{1}{4}$&$\frac{1}{16}$\\
-\hline
-\end{tabular}
+\item Let Z be the random variable representing the number of heads in four tosses of a coin. Z can take values \{0, 1, 2, 3, 4\}.
+\\\\ P(Z=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$,  $\therefore$ P(Z=r) = $n \choose r$ $ (\frac{1}{2}) ^n $.
+\begin{align}
+P(Z=0) &= {4 \choose 0}  \frac{1}{2^4} = \frac{1}{16}\\ P(Z=1) &= {4 \choose 1}  \frac{1}{2^4} = \frac{4}{16} = \frac{1}{4} \\ P(Z=2) &= {4 \choose 2}  \frac{1}{2^4} = \frac{6}{16} = \frac{3}{8}\\ P(Z=3) &= {4 \choose 3}  \frac{1}{2^4} = \frac{4}{16} = \frac{1}{4}\\ P(Z=4) &= {4 \choose 4}  \frac{1}{2^4} = \frac{1}{16}
+\end{align}
 \end{enumerate}
 \end{document}
