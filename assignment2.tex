@@ -1,6 +1,7 @@
 \let\negmedspace\undefined
 \let\negthickspace\undefined
-\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\documentclass[journal,12pt]{IEEEtran}
+
 %\documentclass[conference]{IEEEtran}
 %\IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
@@ -18,6 +19,7 @@
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} % loads  TikZ and tkz-base
 \usepackage{listings}
+\usepackage{caption}
 %
 %\usepackage{setspace}
 %\usepackage{gensymb}
@@ -115,8 +117,12 @@ columns=fullflexible
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
 \bibliographystyle{IEEEtran}
 %\bibliographystyle{ieeetr}
+
+
 \providecommand{\mbf}{\mathbf}
 \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 \providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
@@ -147,6 +153,7 @@ columns=fullflexible
 \providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
 \newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\newcommand*{\comb}[2]{{}^{#1}C_{#2}}
 %\numberwithin{equation}{section}
 %\numberwithin{equation}{subsection}
 %\numberwithin{problem}{section}
@@ -154,33 +161,36 @@ columns=fullflexible
 %\makeatletter
 %\@addtoreset{figure}{problem}
 %\makeatother
+
 %\let\StandardTheFigure\thefigure
 \let\vec\mathbf
 %\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
 %\renewcommand{\thefigure}{\theproblem}
 %\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
 %\counterwithin{equation}{enumi}
+
+
 %\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+
 %\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
 %     \def\rightbox#1{\makebox[0in][r]{#1}}
 %     \def\centbox#1{\makebox[0in]{#1}}
 %     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
 %     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+
 \vspace{3cm}
+
 \title{
-%	\logo{
-AI1110 Assignment 2 in \LaTeX
-%	}
+\textbf {Assignment 2 in \LaTeX}\\ \large \textbf{AI1110: Probability and Random Variables}\\Indian Institute of Technology, Hyderabad
 }
-\author{ Kondaparthy Anuraga Chandan$^{*}$% <-this % stops a space
-	\thanks{*The student is with the Department
-		of Artificial Intelligence, Indian Institute of Technology, Hyderabad
-		502285 India e-mail: ai22btech11011@iith.ac.in.}
+\author{Kondaparthy Anuraga Chandan\\AI22BTECH11011
+\thanks{*The student is with the Department of Artificial Intelligence, Indian Institute of Technology, Hyderabad, 502285, India. e-mail: ai22btech11011@iith.ac.in}}
 	
-}	
 %\title{
 %	\logo{Matrix Analysis through Octave}{\begin{center}\includegraphics[scale=.24]{tlc}\end{center}}{}{HAMDSP}
 %}
+
+
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 %\title{Matrix Analysis through Octave}
@@ -194,6 +204,7 @@ AI1110 Assignment 2 in \LaTeX
 % a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
 % was not built to handle multiple paragraphs
 %
+
 %\author{<-this % stops a space
 %\thanks{}}
 %}
@@ -214,6 +225,9 @@ AI1110 Assignment 2 in \LaTeX
 % you are supposed to have spaces between the names. For what it is worth,
 % this is a minor point as most people would not even notice if the said evil
 % space somehow managed to creep in.
+
+
+
 % The paper headers
 %\markboth{Journal of \LaTeX\ Class Files,~Vol.~6, No.~1, January~2007}%
 %{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
@@ -224,18 +238,31 @@ AI1110 Assignment 2 in \LaTeX
 % *** name in the headers of peer review papers.                   ***
 % You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
 % you desire.
+
+
+
+
 % If you want to put a publisher's ID mark on the page you can do it like
 % this:
 %\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
 % Remember, if you use this you must call \IEEEpubidadjcol in the second
 % column for its text to clear the IEEEpubid mark.
+
+
+
 % make the title area
 \maketitle
+
+\newpage
+
 %\tableofcontents
+
 \bigskip
+
 \renewcommand{\thefigure}{\theenumi}
 \renewcommand{\thetable}{\theenumi}
 %\renewcommand{\theequation}{\theenumi}
+
 %\begin{abstract}
 %%\boldmath
 %In this letter, an algorithm for evaluating the exact analytical bit error rate  (BER)  for the piecewise linear (PL) combiner for  multiple relays is presented. Previous results were available only for upto three relays. The algorithm is unique in the sense that  the actual mathematical expressions, that are prohibitively large, need not be explicitly obtained. The diversity gain due to multiple relays is shown through plots of the analytical BER, well supported by simulations. 
@@ -247,10 +274,14 @@ AI1110 Assignment 2 in \LaTeX
 % then you can use LaTeX's standard command \boldmath at the very start
 % of the abstract to achieve this. Many IEEE journals frown on math
 % in the abstract anyway.
+
 % Note that keywords are not normally used for peerreview papers.
 %\begin{IEEEkeywords}
 %Cooperative diversity, decode and forward, piecewise linear
 %\end{IEEEkeywords}
+
+
+
 % For peer review papers, you can put extra information on the cover
 % page as needed:
 % \ifCLASSOPTIONpeerreview
@@ -260,7 +291,6 @@ AI1110 Assignment 2 in \LaTeX
 % For peerreview papers, this IEEEtran command inserts a page break and
 % creates the second title. It will be ignored for other modes.
 %\IEEEpeerreviewmaketitle
-%%%%%%%%%%%%%%%%%%%%%  This is my Assignment %%%%%%%%%%%%%%%%%%%%%
 \textbf{12.13.4.4  Question:} 
 \\Find the probability distribution of
 \begin{enumerate}[label=(\roman*)]
@@ -270,20 +300,23 @@ AI1110 Assignment 2 in \LaTeX
 \textbf{Solution:}
 \begin{enumerate}[label=(\roman*)]
 \item Let X be the random variable representing the number of heads in two tosses of a fair coin. X can take values \{0, 1, 2\}.
-\\\\ P(X=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$, n = 2.  \\ \begin{center}  $\therefore$ P(X=r) = $2 \choose r$ $ (\frac{1}{2}) ^2 $ \end{center}
 \begin{align}
-P(X=0) &= {2 \choose 0} \frac{1}{2^2} = \frac{1}{4} \\ P(X=1) &= {2 \choose 1}  \frac{1}{2^2} = \frac{2}{4} = \frac{1}{2}\\ P(X=2) &= {2 \choose 2}  \frac{1}{2^2} = \frac{1}{4}
+ P(X=r) &= \comb{n}{r} p^r q^{n-r} , p = \frac{1}{2}, q = \frac{1}{2}, n = 2. 
+ \\ \therefore P(X=r) &= \frac{\comb{2}{r}}{2^2} 
+\\P(X=0) &= \frac{\comb{2}{0}}{2^2} = \frac{1}{4} \\ P(X=1) &= \frac{\comb{2}{1}}{2^2} = \frac{2}{4} = \frac{1}{2}\\ P(X=2) &= \frac{\comb{2}{2}}{2^2} = \frac{1}{4}
 \end{align}
 \item Let Y be the random variable representing the number of tails in simultaneous tosses of 3 coins. Y can take values \{0, 1, 2, 3\}.
-\\\\ P(Y=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$, n = 3. \\ \begin{center}  $\therefore$ P(Y=r) = $3 \choose r$ $ (\frac{1}{2}) ^3 $ \end{center}
 \begin{align}
-P(Y=0) &= {3 \choose 0} \frac{1}{2^3} = \frac{1}{8} \\ P(Y=1) &= {3 \choose 1}  \frac{1}{2^3} = \frac{3}{8}\\ P(Y=2) &= {3 \choose 2}  \frac{1}{2^3} = \frac{3}{8} \\ P(Y=3) &= {3 \choose 3}  \frac{1}{2^3}  = \frac{1}{8}
+P(Y=r) &= \comb{n}{r} p^r q^{n-r} , p = \frac{1}{2}, q = \frac{1}{2}, n = 3.
+\\ \therefore P(Y=r) &= \frac{\comb{3}{r}}{2^3}
+\\P(Y=0) &= \frac{\comb{3}{0}}{2^3} = \frac{1}{8} \\ P(Y=1) &= \frac{\comb{3}{1}}{2^3} = \frac{3}{8}\\ P(Y=2) &= \frac{\comb{3}{2}}{2^3} = \frac{3}{8} \\ P(Y=3) &= \frac{\comb{3}{3}}{2^3}  = \frac{1}{8}
 \end{align}
 \\
 \item Let Z be the random variable representing the number of heads in four tosses of a coin. Z can take values \{0, 1, 2, 3, 4\}.
-\\\\ P(Z=r) = $n \choose r$ $(p)^r$ $(1-p)^{n-r}$ , here p = $\frac{1}{2}$, n = 4. \\ \begin{center}  $\therefore$ P(Z=r) = $4 \choose r$ $ (\frac{1}{2}) ^4 $ \end{center}
 \begin{align}
-P(Z=0) &= {4 \choose 0}  \frac{1}{2^4} = \frac{1}{16}\\ P(Z=1) &= {4 \choose 1}  \frac{1}{2^4} = \frac{4}{16} = \frac{1}{4} \\ P(Z=2) &= {4 \choose 2}  \frac{1}{2^4} = \frac{6}{16} = \frac{3}{8}\\ P(Z=3) &= {4 \choose 3}  \frac{1}{2^4} = \frac{4}{16} = \frac{1}{4}\\ P(Z=4) &= {4 \choose 4}  \frac{1}{2^4} = \frac{1}{16}
+ P(Z=r) &= \comb{n}{r} p^r q^{n-r} , p = \frac{1}{2}, q = \frac{1}{2}, n = 4. 
+\\  \therefore P(Z=r) &= \frac{\comb{4}{r}}{2^4} 
+\\P(Z=0) &= \frac{\comb{4}{0}}{2^4} = \frac{1}{16}\\ P(Z=1) &= \frac{\comb{4}{1}}{2^4} = \frac{4}{16} = \frac{1}{4} \\ P(Z=2) &= \frac{\comb{4}{2}}{2^4} = \frac{6}{16} = \frac{3}{8}\\ P(Z=3) &= \frac{\comb{4}{3}}{2^4} = \frac{4}{16} = \frac{1}{4}\\ P(Z=4) &= \frac{\comb{4}{4}}{2^4} = \frac{1}{16}
 \end{align}
 \end{enumerate}
 \end{document}
