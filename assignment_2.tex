@@ -259,7 +259,22 @@ columns=fullflexible
 How many times must a man toss a fair coin so that the probability of having
 at least one head is more than 90\%?\\
 \textbf{Solution:}
-\\Let us say the man has tossed the fair coin 'n' times. The event of having no heads is same as the event of having tails in all tosses.
+\\Let us say the man has tossed the fair coin 'n' times. The event of having no heads is same as the event of having tails in all tosses.\\
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+Parameter & Value & Description\\
+\hline
+n & ? & number of times the coin is tossed \\
+\hline
+$\pr{\text{no heads}}$ & $\frac{1}{2^n}$ & probability of having no heads in tossing the fair coin 'n' times\\
+\hline
+$\pr{\text{all tails}}$ & $\frac{1}{2^n}$ & probability of getting all tails in tossing the fair coin 'n' times \\
+\hline
+$\pr{\text{atleast one head}}$ & 1 - $\frac{1}{2^n}$ & probability of having at least one head in tossing the fair coin 'n' times \\
+\hline
+\end{tabular}
+\end{center}
 \begin{align}
 \therefore \pr{\text{no heads}} &= \pr{\text{all tails}} = \frac{1}{2^n}.
 \\ \because \pr{\text{atleast one head}} &= 1 - \pr{\text{no heads}}.
